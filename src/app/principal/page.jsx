@@ -4,8 +4,8 @@ import {Principal} from "@/Componentes/Principal";
 import {Navbar} from "@/Componentes/Navbar";
 import {AzulFundo} from "@/utils/cores";
 
-export default function Home() {
-  const NavAreas = ["Principal"];
+export default function principal() {
+  const NavAreas = [];
   const PrincipalAreas = {
     cor: AzulFundo,
     img: "modelo.svg",
