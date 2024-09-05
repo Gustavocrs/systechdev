@@ -5,7 +5,7 @@ import {Navbar} from "@/Componentes/Navbar";
 import {AzulFundo} from "@/utils/cores";
 
 export default function principal() {
-  const NavAreas = [];
+  const NavAreas = [{title: "Principal", href: "/principal"}];
   const PrincipalAreas = {
     cor: AzulFundo,
     img: "modelo.svg",

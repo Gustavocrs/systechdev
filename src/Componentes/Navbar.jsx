@@ -9,8 +9,8 @@ export const Navbar = ({NavAreas = []}) => {
       <div style={{backgroundColor: "transparent"}} />
       <Ul>
         {NavAreas.map((nav, index) => (
-          <Link href="/principal">
-            <Li key={index}>{nav}</Li>
+          <Link key={index} href={nav.href}>
+            <Li>{nav.title}</Li>
           </Link>
         ))}
       </Ul>
@@ -45,5 +45,6 @@ const Li = styled.li`
   justify-content: center;
   align-items: center;
   list-style: none;
+  color: white;
   /* background-color: red; */
 `;
