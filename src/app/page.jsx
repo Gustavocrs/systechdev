@@ -5,17 +5,17 @@ import {Navbar} from "@/Componentes/Navbar";
 import {AzulFundo} from "@/utils/cores";
 
 export default function Home() {
-  const NavAreas = [{title: "Principal", href: "/principal"}];
+  const NavAreas = [{title: "Principal", href: "/"}];
   const PrincipalAreas = {
     cor: AzulFundo,
     img: "modelo.svg",
   };
 
   return (
-    <Container>
+    <>
       {/* <Navbar NavAreas={NavAreas} /> */}
-      {/* <Principal bgimg={PrincipalAreas.img} bgcolor={PrincipalAreas.cor} /> */}
-    </Container>
+      <Principal />
+    </>
   );
 }
 
