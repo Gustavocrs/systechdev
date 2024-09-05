@@ -17,20 +17,21 @@ const Container = styled.div`
   width: 100vw;
   height: 100vh;
   color: #fff;
-  background: url("modelo.svg") no-repeat center;
+  background: url("modelo.svg") no-repeat;
+  background-position: 50% 30%;
   background-size: 500px 500px;
   background-color: ${AzulFundo};
 
   span {
     position: relative;
-    top: 200px;
+    top: 250px;
     margin: 0 auto;
     font-size: 2rem;
     font-family: Cairo;
   }
 
   @media screen and (max-width: 600px) {
+    top: 200px;
     background-size: 300px 300px;
-    background-position: 50% 30%;
   }
 `;
