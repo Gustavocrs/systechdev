@@ -26,6 +26,8 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   background-color: ${AzulFundo};
+  @media screen and (max-width: 600px) {
+  }
 `;
 
 const Ul = styled.ul`
@@ -36,6 +38,10 @@ const Ul = styled.ul`
   align-items: center;
   color: ${BrancoLeve};
   background-color: ${AzulFundo};
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    /* background-color: red; */
+  }
 `;
 
 const Li = styled.li`
@@ -47,4 +53,8 @@ const Li = styled.li`
   list-style: none;
   color: white;
   /* background-color: red; */
+  @media screen and (max-width: 600px) {
+    width: 50px;
+    /* background-color: red; */
+  }
 `;

@@ -14,18 +14,16 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   width: 100vw;
   height: 100vh;
   color: #fff;
-  /* margin-top: 30px; */
   background: url("modelo.svg") no-repeat center;
   background-size: 500px 500px;
   background-color: ${AzulFundo};
 
   span {
     position: relative;
-    top: 300px;
+    top: 200px;
     margin: 0 auto;
     font-size: 2rem;
     font-family: Cairo;
@@ -33,5 +31,6 @@ const Container = styled.div`
 
   @media screen and (max-width: 600px) {
     background-size: 300px 300px;
+    background-position: 50% 30%;
   }
 `;
