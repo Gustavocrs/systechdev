@@ -15,7 +15,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 30px);
   color: #fff;
   background: url("modelo.svg") no-repeat;
   background-position: 50% 30%;
