@@ -3,23 +3,20 @@ import {AzulFundo} from "@/utils/cores";
 import styled from "styled-components";
 
 export const Principal = () => {
-  return (
-    <ContainerBanner>
-      <span>Em breve</span>
-    </ContainerBanner>
-  );
+  return <ContainerBanner>{/* <span>Em breve</span> */}</ContainerBanner>;
 };
 
-const ContainerBanner = styled.div`
+const ContainerBanner = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100vw;
-  height: calc(100vh - 30px);
+  /* height: calc(100vh - 50px); */
+  height: 100vh;
   color: #fff;
   background: url("modelo.svg") no-repeat;
   background-position: 50% 30%;
-  background-size: 500px 500px;
+  background-size: 300px 300px;
   background-color: ${AzulFundo};
 
   span {

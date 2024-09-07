@@ -1,9 +1,10 @@
 "use client";
 import styled from "styled-components";
-import {Principal} from "@/Componentes/Principal";
-import {Navbar} from "@/Componentes/Navbar";
+import {Principal} from "@/Pages/Principal";
+import {Navbar} from "@/Pages/Navbar";
 import {AzulFundo} from "@/utils/cores";
 import {Button} from "@/Componentes/Button";
+import {Servicos} from "@/Pages/Servicos";
 
 export default function Home() {
   const NavAreas = [
@@ -14,13 +15,15 @@ export default function Home() {
 
   return (
     <Container>
-      <Navbar NavAreas={NavAreas} />
+      {/* <Navbar NavAreas={NavAreas} /> */}
       <Principal />
+      <Servicos />
     </Container>
   );
 }
 
-const Container = styled.div`
+const Container = styled.section`
   width: 100vw;
-  height: calc(100vh - 30px);
+  /* height: calc(100vh - 50px); */
+  height: 100vh;
 `;

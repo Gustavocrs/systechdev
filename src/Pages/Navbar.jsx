@@ -20,7 +20,7 @@ export const Navbar = ({NavAreas = []}) => {
 
 const Nav = styled.nav`
   width: 100%;
-  height: 30px;
+  height: 50px;
   position: fixed;
   top: 0;
   display: flex;
