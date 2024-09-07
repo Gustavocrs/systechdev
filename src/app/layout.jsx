@@ -12,7 +12,7 @@ export default function RootLayout({children}) {
             content="width=device-width, initial-scale=1.0"
           />
 
-          <meta property="og:title" content="Wallace Maxters" />
+          <meta property="og:title" content="< Systech Dev />" />
           <meta
             property="og:description"
             content="Site de criação de sistemas web"
