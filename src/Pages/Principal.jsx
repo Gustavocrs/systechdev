@@ -29,6 +29,6 @@ const ContainerBanner = styled.section`
 
   @media screen and (max-width: 600px) {
     top: 200px;
-    background-size: 300px 300px;
+    background-size: 65% 65%;
   }
 `;
