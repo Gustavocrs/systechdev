@@ -12,6 +12,23 @@ export default function RootLayout({children}) {
             content="width=device-width, initial-scale=1.0"
           />
 
+          <meta property="og:title" content="Wallace Maxters" />
+          <meta
+            property="og:description"
+            content="Site de criação de sistemas web"
+          />
+          <meta property="og:url" content="http://systechdev.com.br/" />
+          <meta
+            property="og:image"
+            content="https://github.com/Gustavocrs/systechdev/blob/master/public/favicon.svg"
+          />
+          <meta property="og:type" content="website" />
+
+          <meta
+            name="keywords"
+            content="React, ReactJS, HTML5, HTML,CSS3, CSS, JavaScript"
+          />
+          <meta name="author" content="Systech Dev" />
           <title>{`<Systech Dev />`}</title>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
