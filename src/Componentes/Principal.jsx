@@ -4,13 +4,13 @@ import styled from "styled-components";
 
 export const Principal = () => {
   return (
-    <Container>
+    <ContainerBanner>
       <span>Em breve</span>
-    </Container>
+    </ContainerBanner>
   );
 };
 
-const Container = styled.div`
+const ContainerBanner = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
