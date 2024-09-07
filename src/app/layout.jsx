@@ -15,7 +15,7 @@ export default function RootLayout({children}) {
           <meta property="og:title" content="< Systech Dev />" />
           <meta
             property="og:description"
-            content="Site de criação de sistemas web"
+            content="Empresa de desenvolvimento de sistemas web"
           />
           <meta property="og:url" content="http://systechdev.com.br/" />
           <meta
