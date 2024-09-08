@@ -5,6 +5,7 @@ import {Navbar} from "@/Pages/Navbar";
 import {AzulFundo} from "@/utils/cores";
 import {Button} from "@/Componentes/Button";
 import {Servicos} from "@/Pages/Servicos";
+import {FaleConosco} from "@/Pages/FaleConosco";
 
 export default function Home() {
   const NavAreas = [
@@ -17,7 +18,8 @@ export default function Home() {
     <Container>
       {/* <Navbar NavAreas={NavAreas} /> */}
       <Principal />
-      <Servicos />
+      {/* <Servicos /> */}
+      {/* <FaleConosco /> */}
     </Container>
   );
 }

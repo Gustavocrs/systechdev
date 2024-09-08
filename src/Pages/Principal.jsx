@@ -1,9 +1,16 @@
 "use client";
+import {TypingEffect} from "@/Componentes/TypingEffect";
 import {AzulFundo} from "@/utils/cores";
 import styled from "styled-components";
 
 export const Principal = () => {
-  return <ContainerBanner>{/* <span>Em breve</span> */}</ContainerBanner>;
+  return (
+    <ContainerBanner>
+      <div id="typing">
+        <TypingEffect text="Em breve..." speed={50} repeat={5} />
+      </div>
+    </ContainerBanner>
+  );
 };
 
 const ContainerBanner = styled.section`
@@ -19,9 +26,9 @@ const ContainerBanner = styled.section`
   background-size: 300px 300px;
   background-color: ${AzulFundo};
 
-  span {
+  #typing {
     position: relative;
-    top: 250px;
+    top: 25%;
     margin: 0 auto;
     font-size: 2rem;
     font-family: Cairo;
@@ -30,5 +37,9 @@ const ContainerBanner = styled.section`
   @media screen and (max-width: 600px) {
     top: 200px;
     background-size: 65% 65%;
+
+    #typing {
+      font-size: 1rem;
+    }
   }
 `;

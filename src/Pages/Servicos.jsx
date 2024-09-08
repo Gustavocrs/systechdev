@@ -81,12 +81,14 @@ const Container = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: flex-end;
+  align-items: center;
 
   width: 100vw;
   height: 100vh;
   color: #fff;
   background-color: ${CinzaClaro};
+
+  overflow: hidden;
 
   span {
     /* position: relative;
@@ -99,7 +101,7 @@ const Container = styled.section`
   h1 {
     /* background-color: ${AzulEscuro}; */
     text-align: center;
-    padding: 10px 0;
+    padding: 5px 0 10px 0;
     font-weight: 800;
     font-size: 2rem;
     color: ${AzulFundo};
@@ -109,7 +111,7 @@ const Container = styled.section`
   }
 
   #elements {
-    width: 100%;
+    width: 70%;
     height: 100vh;
     padding: 0 20px;
     display: flex;
@@ -122,7 +124,7 @@ const Container = styled.section`
   #elemento_left,
   #elemento_right {
     width: 100%;
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     border-radius: 3px;
     background-color: ${AzulClaro};
@@ -130,7 +132,7 @@ const Container = styled.section`
 
   #quadrado {
     width: 20%;
-    height: 130px;
+    height: 140px;
     background-color: ${CinzaMedio};
     margin-right: 5px;
     border-left: 3px solid ${AzulClaro};
@@ -152,7 +154,7 @@ const Container = styled.section`
 
   #retangulo {
     width: 80%;
-    height: 130px;
+    height: 140px;
     background-color: ${CinzaMedio};
     margin-right: 5px;
     color: ${AzulFundo};
@@ -182,6 +184,7 @@ const Container = styled.section`
     #elements {
       align-items: center;
       padding: 0;
+      width: 100%;
     }
     #elemento_left,
     #elemento_right {
