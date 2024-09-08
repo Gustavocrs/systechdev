@@ -19,7 +19,8 @@ export default function RootLayout({children}) {
           />
           <meta property="og:url" content="http://systechdev.com.br/" />
           <meta
-            property="og:image" content="http://raw.githubusercontent.com/Gustavocrs/systechdev/blob/master/public/favicon.svg"
+            property="og:image"
+            content="http://raw.githubusercontent.com/Gustavocrs/systechdev/blob/master/public/thumb.png"
           />
           <meta property="og:type" content="website" />
 
