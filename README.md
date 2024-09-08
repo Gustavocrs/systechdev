@@ -1,6 +1,6 @@
 # <Systech Dev>
 
-![Logo do Projeto](https://github.com/gustavocrs/systechdev/blob/master/thumb.png)
+![Logo do Projeto](http://raw.githubusercontent.com/Gustavocrs/systechdev/master/public/thumb.png)
 
 ## Descrição
 
