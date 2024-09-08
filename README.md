@@ -22,16 +22,17 @@ Bem-vindo ao repositório da Systech Dev! Somos uma empresa especializada no des
 - Desenvolvimento de sites responsivos
 - Aplicações web escaláveis
 - Integração com APIs de terceiros
-- Otimização para SEO
+<!-- - Otimização para SEO -->
 - Suporte e manutenção contínuos
 
 ## Tecnologias Utilizadas
 
 - HTML5, CSS3, JavaScript
-- Frameworks: React, Angular, Vue.js
-- Backend: Node.js, Django, Ruby on Rails
-- Banco de Dados: MySQL, PostgreSQL, MongoDB
-- Ferramentas de DevOps: Docker, Kubernetes, Jenkins
+- Frameworks Front-end: Nextjs e Reactjs
+- Frameworks CSS: Styled Components
+  <!-- - Backend: Node.js, Django, Ruby on Rails -->
+  <!-- - Banco de Dados: MySQL, PostgreSQL, MongoDB -->
+  <!-- - Ferramentas de DevOps: Docker, Kubernetes, Jenkins -->
 
 ## Instalação
 
