@@ -40,11 +40,11 @@ Para clonar e executar este projeto localmente, siga estas etapas:
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/empresa/nome-do-repositorio.git
+   git clone https://github.com/Gustavocrs/systechdev.git
    ```
 2. Navegue até o diretório do projeto:
    ```bash
-   cd nome-do-repositorio
+   cd systechdev
    ```
 3. Instale as dependências:
    ```bash
