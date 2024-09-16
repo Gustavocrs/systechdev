@@ -2,6 +2,7 @@ import {AzulClaro, AzulEscuro, AzulFundo, CinzaClaro} from "@/utils/cores";
 import styled from "styled-components";
 import {useEffect, useState} from "react";
 import {getData, postData} from "@/Firebase/services";
+import emailjs from "emailjs-com";
 
 export const FaleConosco = () => {
   const [formControl, setFormControl] = useState({
@@ -27,7 +28,29 @@ export const FaleConosco = () => {
       mensagem: "",
     });
   };
-  const handleAddContato = (e) => {
+  // const handleAddContato = (e) => {
+  //   e.preventDefault();
+  //   const data = {
+  //     cel: formControl.cel,
+  //     email: formControl.email,
+  //     mensagem: formControl.mensagem,
+  //     nome: formControl.nome,
+  //   };
+  //   postData("contatos", data)
+  //     .then((data) => {
+  //       console.log("Mensagem enviada", data);
+  //       setFormControl({
+  //         nome: "",
+  //         email: "",
+  //         cel: "",
+  //         mensagem: "",
+  //       });
+  //     })
+  //     .catch((error) => {
+  //       console.error("Erro ao ler dados:", error);
+  //     });
+  // };
+  const handleSubmit = (e) => {
     e.preventDefault();
     const data = {
       cel: formControl.cel,
@@ -35,9 +58,12 @@ export const FaleConosco = () => {
       mensagem: formControl.mensagem,
       nome: formControl.nome,
     };
-    postData("contatos", data)
-      .then((data) => {
-        console.log("Mensagem enviada", data);
+
+    console.log(data);
+    emailjs
+      .send("service_i9jxq8o", "template_t6556na", data, "SMChjk4mJCaFWIr9m")
+      .then((response) => {
+        console.log("SUCCESS!", response.status, response.text);
         setFormControl({
           nome: "",
           email: "",
@@ -46,7 +72,7 @@ export const FaleConosco = () => {
         });
       })
       .catch((error) => {
-        console.error("Erro ao ler dados:", error);
+        console.log("FAILED...", error);
       });
   };
 
@@ -73,7 +99,7 @@ export const FaleConosco = () => {
       </span>
       <div id="divBody">
         <div id="divForm">
-          <form id="form" onSubmit={handleAddContato}>
+          <form id="form" onSubmit={handleSubmit}>
             <input
               id="input"
               type="text"
@@ -81,6 +107,7 @@ export const FaleConosco = () => {
               placeholder="Nome"
               value={formControl.nome}
               onChange={handleChange}
+              required
             />
             <input
               id="input"
@@ -89,6 +116,7 @@ export const FaleConosco = () => {
               placeholder="E-mail"
               value={formControl.email}
               onChange={handleChange}
+              required
             />
             <input
               id="input"
@@ -97,6 +125,7 @@ export const FaleConosco = () => {
               placeholder="Celular"
               value={formControl.cel}
               onChange={handleChange}
+              required
             />
             <textarea
               id="mensagem"
@@ -105,6 +134,7 @@ export const FaleConosco = () => {
               placeholder="Mensagem"
               value={formControl.mensagem}
               onChange={handleChange}
+              required
             ></textarea>
             <div
               style={{
