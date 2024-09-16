@@ -11,6 +11,7 @@ export const FaleConosco = () => {
     mensagem: "",
   });
   const [response, setResponse] = useState([]);
+  const [disabledBtn, setDisabledBtn] = useState(true);
   const handleChange = (e) => {
     const {name, value} = e.target;
     setFormControl((prev) => ({
@@ -49,6 +50,19 @@ export const FaleConosco = () => {
       });
   };
 
+  useEffect(() => {
+    if (
+      formControl.nome == "" ||
+      formControl.cel == "" ||
+      formControl.email == "" ||
+      formControl.mensagem == ""
+    ) {
+      setDisabledBtn(true);
+    } else {
+      setDisabledBtn(false);
+    }
+  }, [formControl]);
+
   return (
     <Container>
       <h1>Fale Conosco</h1>
@@ -58,10 +72,6 @@ export const FaleConosco = () => {
         em breve.
       </span>
       <div id="divBody">
-        <div id="divConteudo">
-          <span>Linkedin</span>
-          <span>Github</span>
-        </div>
         <div id="divForm">
           <form id="form" onSubmit={handleAddContato}>
             <input
@@ -106,11 +116,15 @@ export const FaleConosco = () => {
               <button id="button" type="button" onClick={handleClearForm}>
                 Limpar
               </button>
-              <button id="button" type="submit">
+              <button id="button" type="submit" disabled={disabledBtn}>
                 Enviar
               </button>
             </div>
           </form>
+        </div>
+        <div id="divConteudo">
+          <span>Linkedin</span>
+          <span>Github</span>
         </div>
       </div>
     </Container>
@@ -158,8 +172,8 @@ const Container = styled.section`
 
   #divConteudo,
   #divForm {
-    width: 45%;
-    height: 75vh;
+    width: 100%;
+    height: 60vh;
     padding: 10px;
     margin: 10px 50px;
 
@@ -199,7 +213,7 @@ const Container = styled.section`
     #button {
       width: 120px;
       height: 40px;
-
+      margin: 10px 0;
       color: #fefefe;
       font-size: 1rem;
       background-color: ${AzulClaro};
@@ -211,6 +225,11 @@ const Container = styled.section`
         transition: 300ms ease-in-out;
         filter: drop-shadow(1px 1px 2px black);
         background-color: ${AzulEscuro};
+      }
+      &:disabled {
+        background-color: lightgray;
+        color: #fefefe;
+        cursor: not-allowed;
       }
     }
   }
