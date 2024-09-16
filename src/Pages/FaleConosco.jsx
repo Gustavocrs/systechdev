@@ -10,15 +10,7 @@ export const FaleConosco = () => {
     cel: "",
     mensagem: "",
   });
-  useEffect(() => {
-    console.log("Teste");
-    const data = {
-      cel: formControl.cel,
-      email: formControl.email,
-      mensagem: formControl.mensagem,
-      nome: formControl.nome,
-    };
-  }, []);
+
   const handleChange = (e) => {
     const {name, value} = e.target;
     setFormControl((prev) => ({
