@@ -17,9 +17,9 @@ export default function Home() {
   return (
     <Container>
       {/* <Navbar NavAreas={NavAreas} /> */}
-      {/* <Principal /> */}
+      <Principal />
       {/* <Servicos /> */}
-      <FaleConosco />
+      {/* <FaleConosco /> */}
     </Container>
   );
 }

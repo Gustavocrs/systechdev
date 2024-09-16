@@ -7,11 +7,11 @@ import {
   updateDoc,
   deleteDoc,
 } from "firebase/firestore";
-import {appdb} from "./firebaseConfig"; // Importando a instância inicializada
+import {appdb} from "./firebaseConfig";
 
 const db = getFirestore(appdb);
 
-export const readData = async (tabela, id) => {
+export const getData = async (tabela, id) => {
   if (!tabela) {
     throw new Error("O parâmetro 'tabela' não pode estar vazio.");
   }
@@ -37,7 +37,7 @@ export const readData = async (tabela, id) => {
   }
 };
 
-export const addData = async (tabela, data) => {
+export const postData = async (tabela, data) => {
   if (!tabela) {
     throw new Error("O parâmetro 'tabela' não pode estar vazio.");
   }
@@ -50,7 +50,7 @@ export const addData = async (tabela, data) => {
   return docRef.id;
 };
 
-export const updateData = async (tabela, id, newData) => {
+export const putData = async (tabela, id, newData) => {
   if (!tabela) {
     throw new Error("O parâmetro 'tabela' não pode estar vazio.");
   }
@@ -65,7 +65,7 @@ export const updateData = async (tabela, id, newData) => {
   console.log("Documento atualizado com ID: ", id);
 };
 
-export const deleteData = async (tabela, id) => {
+export const delData = async (tabela, id) => {
   if (!tabela) {
     throw new Error("O parâmetro 'tabela' não pode estar vazio.");
   }

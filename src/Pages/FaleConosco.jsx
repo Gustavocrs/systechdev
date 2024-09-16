@@ -1,7 +1,7 @@
 import {AzulClaro, AzulEscuro, AzulFundo, CinzaClaro} from "@/utils/cores";
 import styled from "styled-components";
 import {useEffect, useState} from "react";
-import {addData} from "@/Firebase/contatosData";
+import {getData, postData} from "@/Firebase/services";
 
 export const FaleConosco = () => {
   const [formControl, setFormControl] = useState({
@@ -10,7 +10,7 @@ export const FaleConosco = () => {
     cel: "",
     mensagem: "",
   });
-
+  const [response, setResponse] = useState([]);
   const handleChange = (e) => {
     const {name, value} = e.target;
     setFormControl((prev) => ({
@@ -34,7 +34,7 @@ export const FaleConosco = () => {
       mensagem: formControl.mensagem,
       nome: formControl.nome,
     };
-    addData("contatos", data)
+    postData("contatos", data)
       .then((data) => {
         console.log("Mensagem enviada", data);
         setFormControl({
@@ -48,6 +48,7 @@ export const FaleConosco = () => {
         console.error("Erro ao ler dados:", error);
       });
   };
+
   return (
     <Container>
       <h1>Fale Conosco</h1>
@@ -58,7 +59,7 @@ export const FaleConosco = () => {
       </span>
       <div id="divBody">
         <div id="divConteudo">
-          <span>Github</span>
+          <span>Linkedin</span>
           <span>Github</span>
         </div>
         <div id="divForm">
