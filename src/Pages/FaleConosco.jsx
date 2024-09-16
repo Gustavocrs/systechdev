@@ -53,10 +53,8 @@ export const FaleConosco = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = {
-      cel: formControl.cel,
-      email: formControl.email,
-      mensagem: formControl.mensagem,
-      nome: formControl.nome,
+      from_name: formControl.nome,
+      message: formControl.mensagem,
     };
 
     console.log(data);
