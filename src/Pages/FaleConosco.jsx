@@ -1,7 +1,61 @@
 import {AzulClaro, AzulEscuro, AzulFundo, CinzaClaro} from "@/utils/cores";
 import styled from "styled-components";
+import {useEffect, useState} from "react";
+import {addData} from "@/Firebase/contatosData";
 
 export const FaleConosco = () => {
+  const [formControl, setFormControl] = useState({
+    nome: "",
+    email: "",
+    cel: "",
+    mensagem: "",
+  });
+  useEffect(() => {
+    console.log("Teste");
+    const data = {
+      cel: formControl.cel,
+      email: formControl.email,
+      mensagem: formControl.mensagem,
+      nome: formControl.nome,
+    };
+  }, []);
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setFormControl((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+  const handleClearForm = () => {
+    setFormControl({
+      nome: "",
+      email: "",
+      cel: "",
+      mensagem: "",
+    });
+  };
+  const handleAddContato = (e) => {
+    e.preventDefault();
+    const data = {
+      cel: formControl.cel,
+      email: formControl.email,
+      mensagem: formControl.mensagem,
+      nome: formControl.nome,
+    };
+    addData("contatos", data)
+      .then((data) => {
+        console.log("Mensagem enviada", data);
+        setFormControl({
+          nome: "",
+          email: "",
+          cel: "",
+          mensagem: "",
+        });
+      })
+      .catch((error) => {
+        console.error("Erro ao ler dados:", error);
+      });
+  };
   return (
     <Container>
       <h1>Fale Conosco</h1>
@@ -16,10 +70,39 @@ export const FaleConosco = () => {
           <span>Github</span>
         </div>
         <div id="divForm">
-          <form id="form">
-            <input id="input" type="text" />
-            <input id="input" type="text" />
-            <textarea id="mensagem" name="mensagem" rows={10}></textarea>
+          <form id="form" onSubmit={handleAddContato}>
+            <input
+              id="input"
+              type="text"
+              name="nome"
+              placeholder="Nome"
+              value={formControl.nome}
+              onChange={handleChange}
+            />
+            <input
+              id="input"
+              type="email"
+              name="email"
+              placeholder="E-mail"
+              value={formControl.email}
+              onChange={handleChange}
+            />
+            <input
+              id="input"
+              type="tel"
+              name="cel"
+              placeholder="Celular"
+              value={formControl.cel}
+              onChange={handleChange}
+            />
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              rows={10}
+              placeholder="Mensagem"
+              value={formControl.mensagem}
+              onChange={handleChange}
+            ></textarea>
             <div
               style={{
                 width: "100%",
@@ -27,8 +110,12 @@ export const FaleConosco = () => {
                 justifyContent: "space-evenly",
               }}
             >
-              <button id="button">Limpar</button>
-              <button id="button">Enviar</button>
+              <button id="button" type="button" onClick={handleClearForm}>
+                Limpar
+              </button>
+              <button id="button" type="submit">
+                Enviar
+              </button>
             </div>
           </form>
         </div>
@@ -92,11 +179,29 @@ const Container = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     padding: 10px;
-    #input,
-    #mensagem {
+
+    #input {
+      width: 100%;
+      height: 40px;
+      border-radius: 5px;
+      border: none;
+      border-bottom: 5px solid ${AzulClaro};
+      outline: none;
       margin: 5px 0;
+      padding: 5px 8px;
+      font-size: 1rem;
+      color: ${AzulEscuro};
+    }
+    #mensagem {
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      border-bottom: 5px solid ${AzulClaro};
+      margin: 5px 0;
+      padding: 3px 8px;
+      font-size: 1rem;
+      color: ${AzulEscuro};
     }
     #button {
       width: 120px;
