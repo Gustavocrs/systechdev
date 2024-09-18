@@ -192,23 +192,21 @@ export const FaleConosco = () => {
           </Link>
         </div>
       </div>
-      <footer id="rodape">
-        Copyright © 2024 - Systech Consultoria e Desenvolvimento de Sistemas Web
-        LTDA
-      </footer>
+      <footer id="rodape">{`Copyright © 2024 - < Systech Dev />`}</footer>
     </Container>
   );
 };
 const Container = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-end;
 
   width: 100vw;
   height: 100vh;
   color: ${AzulFundo};
   background-color: ${AzulFundo};
+  overflow: scroll;
 
   h1 {
     /* background-color: ${AzulEscuro}; */
@@ -232,7 +230,9 @@ const Container = styled.section`
     color: ${BrancoLeve};
     text-align: center;
     width: 100%;
+    height: auto;
     font-size: 1.1rem;
+    /* background-color: red; */
   }
   #divBody {
     display: flex;
@@ -265,6 +265,7 @@ const Container = styled.section`
     justify-content: space-around;
     align-items: center;
     background-color: ${AzulFundo};
+    /* background-color: red; */
     border-radius: 3px;
   }
   #divConteudo {
@@ -343,7 +344,38 @@ const Container = styled.section`
     width: 100%;
     color: ${BrancoLeve};
     font-size: 0.8rem;
-    height: 30px;
+    padding: 15px 0;
+    /* height: 30px; */
     text-align: center;
+    /* background-color: red; */
+  }
+
+  @media screen and (max-width: 600px) {
+    #divBody {
+      flex-direction: column;
+      justify-content: space-between;
+      height: auto;
+    }
+    #divConteudo {
+      height: 100px;
+    }
+    #divForm {
+      height: auto;
+    }
+    #form {
+    }
+    #imgGithub,
+    #imgLinkedin {
+      width: 60px;
+      height: 60px;
+    }
+    #rodape {
+      /* background-color: red; */
+      font-size: 0.7rem;
+      padding: 5px 0;
+    }
+    #texto {
+      padding: 20px 0;
+    }
   }
 `;
