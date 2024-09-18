@@ -11,10 +11,6 @@ Bem-vindo ao repositório da Systech Dev! Somos uma empresa especializada no des
 - Descrição
 - Funcionalidades
 - Tecnologias Utilizadas
-- Instalação
-- Uso
-- Contribuição
-- Licença
 - Autores
 
 ## Funcionalidades
@@ -33,37 +29,6 @@ Bem-vindo ao repositório da Systech Dev! Somos uma empresa especializada no des
   <!-- - Backend: Node.js, Django, Ruby on Rails -->
   <!-- - Banco de Dados: MySQL, PostgreSQL, MongoDB -->
   <!-- - Ferramentas de DevOps: Docker, Kubernetes, Jenkins -->
-
-## Instalação
-
-Para clonar e executar este projeto localmente, siga estas etapas:
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/Gustavocrs/systechdev.git
-   ```
-2. Navegue até o diretório do projeto:
-   ```bash
-   cd systechdev
-   ```
-3. Instale as dependências:
-   ```bash
-   npm install
-   ```
-
-## Uso
-
-Para iniciar o servidor de desenvolvimento, execute:
-
-```bash
-npm run dev
-```
-
-Abra http://localhost:3000 no seu navegador para ver o projeto em ação.
-
-## Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para mais detalhes.
 
 ## Autores
 

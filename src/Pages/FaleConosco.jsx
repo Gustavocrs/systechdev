@@ -1,8 +1,18 @@
-import {AzulClaro, AzulEscuro, AzulFundo, CinzaClaro} from "@/utils/cores";
+import {
+  AzulClaro,
+  AzulEscuro,
+  AzulFundo,
+  Branco,
+  BrancoLeve,
+  CinzaClaro,
+} from "@/utils/cores";
 import styled from "styled-components";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {getData, postData} from "@/Firebase/services";
 import emailjs from "emailjs-com";
+import Image from "next/image";
+import Inputmask from "inputmask";
+import Link from "next/link";
 
 export const FaleConosco = () => {
   const [formControl, setFormControl] = useState({
@@ -13,6 +23,11 @@ export const FaleConosco = () => {
   });
   const [response, setResponse] = useState([]);
   const [disabledBtn, setDisabledBtn] = useState(true);
+  const celInputRef = useRef(null);
+
+  useEffect(() => {
+    Inputmask("(99) 99999-9999").mask(celInputRef.current);
+  }, []);
   const handleChange = (e) => {
     const {name, value} = e.target;
     setFormControl((prev) => ({
@@ -55,6 +70,8 @@ export const FaleConosco = () => {
     const data = {
       from_name: formControl.nome,
       message: formControl.mensagem,
+      email: formControl.email,
+      phone: formControl.cel,
     };
 
     console.log(data);
@@ -124,6 +141,7 @@ export const FaleConosco = () => {
               value={formControl.cel}
               onChange={handleChange}
               required
+              ref={celInputRef}
             />
             <textarea
               id="mensagem"
@@ -151,10 +169,33 @@ export const FaleConosco = () => {
           </form>
         </div>
         <div id="divConteudo">
-          <span>Linkedin</span>
-          <span>Github</span>
+          <Link href="https://github.com/Gustavocrs" target="blank">
+            <Image
+              id="imgGithub"
+              src="/github.png"
+              width={200}
+              height={200}
+              alt="logo do github"
+            />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/gustavocrsilva/"
+            target="blank"
+          >
+            <Image
+              id="imgLinkedin"
+              src="/linkedin.png"
+              width={200}
+              height={200}
+              alt="logo do linkedin"
+            />
+          </Link>
         </div>
       </div>
+      <footer id="rodape">
+        Copyright © 2024 - Systech Consultoria e Desenvolvimento de Sistemas Web
+        LTDA
+      </footer>
     </Container>
   );
 };
@@ -175,31 +216,33 @@ const Container = styled.section`
     padding: 10px 0;
     font-weight: 800;
     font-size: 2rem;
-    color: #fefefe;
+    color: ${BrancoLeve};
 
     width: 100%;
     border-top: 15px solid ${AzulClaro};
   }
   span {
     height: 50px;
-  }
-  #texto {
-    width: 100%;
-    color: #fefefe;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /* background-color: red; */
   }
-
+  #texto {
+    color: ${BrancoLeve};
+    text-align: center;
+    width: 100%;
+    font-size: 1.1rem;
+  }
   #divBody {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
-
+    height: 100%;
     /* background-color: red; */
   }
-
-  #divConteudo,
-  #divForm {
+  /* #divConteudo {
     width: 100%;
     height: 60vh;
     padding: 10px;
@@ -209,9 +252,30 @@ const Container = styled.section`
     flex-direction: column;
     background-color: #eeeeee;
     border-radius: 3px;
+  } */
+  #divForm,
+  #divConteudo {
+    width: 100%;
+    height: 60vh;
+    padding: 10px;
+    margin: 10px 50px;
+
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    align-items: center;
+    background-color: ${AzulFundo};
+    border-radius: 3px;
+  }
+  #divConteudo {
+    background-color: transparent;
+  }
+  #divForm {
+    /* filter: drop-shadow(1px -1px 5px white); */
   }
   #form {
     display: flex;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     padding: 10px;
@@ -221,28 +285,31 @@ const Container = styled.section`
       height: 40px;
       border-radius: 5px;
       border: none;
-      border-bottom: 5px solid ${AzulClaro};
+      border-bottom: 10px solid ${AzulClaro};
       outline: none;
       margin: 5px 0;
       padding: 5px 8px;
       font-size: 1rem;
       color: ${AzulEscuro};
+      background-color: ${BrancoLeve};
     }
     #mensagem {
       border-radius: 5px;
       border: none;
       outline: none;
-      border-bottom: 5px solid ${AzulClaro};
+      border-bottom: 10px solid ${AzulClaro};
       margin: 5px 0;
-      padding: 3px 8px;
+      padding: 5px 8px;
       font-size: 1rem;
       color: ${AzulEscuro};
+      background-color: ${BrancoLeve};
+      resize: none;
     }
     #button {
       width: 120px;
       height: 40px;
       margin: 10px 0;
-      color: #fefefe;
+      color: ${BrancoLeve};
       font-size: 1rem;
       background-color: ${AzulClaro};
       outline: none;
@@ -255,10 +322,28 @@ const Container = styled.section`
         background-color: ${AzulEscuro};
       }
       &:disabled {
-        background-color: lightgray;
-        color: #fefefe;
+        background-color: transparent;
+        color: ${BrancoLeve};
         cursor: not-allowed;
+        border: 1px solid ${BrancoLeve};
       }
     }
+  }
+  #imgGithub,
+  #imgLinkedin {
+    /* background-color: #0077b5; */
+    filter: drop-shadow(16px -16px 20px ${AzulClaro});
+    &:hover {
+      filter: drop-shadow(-16px 16px 20px ${Branco});
+      cursor: pointer;
+      transition: 300ms ease-in-out;
+    }
+  }
+  #rodape {
+    width: 100%;
+    color: ${BrancoLeve};
+    font-size: 0.8rem;
+    height: 30px;
+    text-align: center;
   }
 `;

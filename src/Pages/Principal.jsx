@@ -3,11 +3,11 @@ import {TypingEffect} from "@/Componentes/TypingEffect";
 import {AzulFundo} from "@/utils/cores";
 import styled from "styled-components";
 
-export const Principal = () => {
+export const Principal = (id) => {
   return (
-    <ContainerBanner>
+    <ContainerBanner id={id}>
       <div id="typing">
-        <TypingEffect text="Em breve..." speed={50} repeat={5} />
+        <TypingEffect text="Em construção..." speed={50} repeat={5} />
       </div>
     </ContainerBanner>
   );

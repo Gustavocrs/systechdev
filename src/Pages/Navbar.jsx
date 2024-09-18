@@ -9,9 +9,9 @@ export const Navbar = ({NavAreas = []}) => {
       <div style={{backgroundColor: "transparent"}} />
       <Ul>
         {NavAreas.map((nav, index) => (
-          <Link key={index} href={nav.href}>
-            <Li>{nav.title}</Li>
-          </Link>
+          <Li key={index}>
+            <a href={nav.href}>{nav.title}</a>
+          </Li>
         ))}
       </Ul>
     </Nav>

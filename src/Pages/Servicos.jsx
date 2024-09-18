@@ -12,9 +12,9 @@ import {TbBulb} from "react-icons/tb";
 import {BsCodeSlash} from "react-icons/bs";
 import {PiRocketLaunch} from "react-icons/pi";
 
-export const Servicos = () => {
+export const Servicos = (id) => {
   return (
-    <Container>
+    <Container id={id}>
       <h1>Etapas de Criação</h1>
       <div id="elements">
         <div id="elemento_left">

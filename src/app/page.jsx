@@ -9,16 +9,16 @@ import {FaleConosco} from "@/Pages/FaleConosco";
 
 export default function Home() {
   const NavAreas = [
-    // {title: "Home", href: "/"},
-    // {title: "Sobre", href: "/"},
-    // {title: "Contato", href: "/"},
+    {title: "Principal", href: "#principal"},
+    {title: "Servicos", href: "#servicos"},
+    {title: "FaleConosco", href: "#faleconosco"},
   ];
 
   return (
     <Container>
       {/* <Navbar NavAreas={NavAreas} /> */}
-      {/* <Principal /> */}
-      {/* <Servicos /> */}
+      <Principal id="principal" />
+      <Servicos id="servicos" />
       <FaleConosco />
     </Container>
   );
