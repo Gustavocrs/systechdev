@@ -203,7 +203,7 @@ const Container = styled.section`
   align-items: flex-end;
 
   width: 100vw;
-  height: 100vh;
+  height: auto;
   color: ${AzulFundo};
   background-color: ${AzulFundo};
   overflow: scroll;
