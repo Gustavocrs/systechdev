@@ -84,7 +84,7 @@ const Container = styled.section`
   align-items: center;
 
   width: 100vw;
-  height: 100vh;
+  height: auto;
   color: #fff;
   background-color: ${CinzaClaro};
 
