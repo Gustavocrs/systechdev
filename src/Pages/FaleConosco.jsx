@@ -173,8 +173,8 @@ export const FaleConosco = () => {
             <Image
               id="imgGithub"
               src="/github.png"
-              width={200}
-              height={200}
+              width={150}
+              height={150}
               alt="logo do github"
             />
           </Link>
@@ -185,8 +185,8 @@ export const FaleConosco = () => {
             <Image
               id="imgLinkedin"
               src="/linkedin.png"
-              width={200}
-              height={200}
+              width={150}
+              height={150}
               alt="logo do linkedin"
             />
           </Link>
