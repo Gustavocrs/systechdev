@@ -18,8 +18,8 @@ export default function Home() {
     <Container>
       {/* <Navbar NavAreas={NavAreas} /> */}
       <Principal id="principal" />
-      <Servicos id="servicos" />
-      <FaleConosco />
+      {/* <Servicos id="servicos" /> */}
+      {/* <FaleConosco /> */}
     </Container>
   );
 }

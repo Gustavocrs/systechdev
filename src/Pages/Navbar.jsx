@@ -6,11 +6,10 @@ import Link from "next/link";
 export const Navbar = ({NavAreas = []}) => {
   return (
     <Nav>
-      <div style={{backgroundColor: "transparent"}} />
       <Ul>
-        {NavAreas.map((nav, index) => (
+        {NavAreas.map(({title, href}, index) => (
           <Li key={index}>
-            <a href={nav.href}>{nav.title}</a>
+            <Link href={href}>{title}</Link>
           </Li>
         ))}
       </Ul>
